@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider; /* Глобальное ограничение */
 use App\Http\Controllers\PostController; /* Подключение контроллера */
@@ -47,6 +48,7 @@ Route::get('/', function () {
 Route::get('/', function () {
     return '!!!!!!!!!!!!!!!!';
 });
+
 
 Route::get('/about', function () {
     return 'about page';
@@ -113,8 +115,8 @@ Route::get('/newblog/all/{id}', function($id) {
     return 'blogs ' . $id;
 })->name('blogs');
 
-
-
+/* 47. Введение в Blade в Laravel */
+Route::get('/users', [UserController::class, 'index']);
 
 
 
