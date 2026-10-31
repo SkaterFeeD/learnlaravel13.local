@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider; /* Глобальное ограничение */
 use App\Http\Controllers\PostController; /* Подключение контроллера */
 use App\Http\Controllers\TestController; /* Подключение контроллера */
+use App\Http\Controllers\RequestController; /* 114. Подключение контроллера */
+
+Route::get('/migration', [RequestController::class, 'show']);
+
 
 Route::get('/newpost', [PostController::class, 'show']); // Сокращенная запись обращения к контроллеру
 Route::get('/newposts', [PostController::class, 'all']); // Обращение ко второму методу контроллера
