@@ -20,6 +20,21 @@ class ProductSeeder extends Seeder
             'description' => Str::random(50),
             'price' => random_int(100, 1000)
         ]);
+        DB::table('products')->insert([
+            'name' => Str::random(10),
+            'description' => Str::random(50),
+            'price' => random_int(100, 1000)
+        ]);
+        DB::table('products')->insert([
+            'name' => Str::random(10),
+            'description' => Str::random(50),
+            'price' => random_int(100, 1000)
+        ]);
+        DB::table('products')->insert([
+            'name' => Str::random(10),
+            'description' => Str::random(50),
+            'price' => random_int(100, 1000)
+        ]);
         // Вставка конкретных данных, которые мы определили заранее
         DB::table('products')->insert([
             'name' => 'Колбаса',

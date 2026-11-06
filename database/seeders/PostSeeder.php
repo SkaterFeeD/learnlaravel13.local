@@ -20,5 +20,29 @@ class PostSeeder extends Seeder
             'text' => Str::random(100),
             'likes' => random_int(1, 10000),
         ]);
+        DB::table('posts')->insert([
+            'title' => Str::random(10),
+            'slug' => Str::random(10),
+            'text' => Str::random(100),
+            'likes' => random_int(1, 10000),
+        ]);
+        DB::table('posts')->insert([
+            'title' => Str::random(10),
+            'slug' => Str::random(10),
+            'text' => Str::random(100),
+            'likes' => random_int(1, 10000),
+        ]);
+        DB::table('posts')->insert([
+            'title' => Str::random(10),
+            'slug' => Str::random(10),
+            'text' => Str::random(100),
+            'likes' => random_int(1, 10000),
+        ]);
+        DB::table('posts')->insert([
+            'title' => Str::random(10),
+            'slug' => Str::random(10),
+            'text' => Str::random(100),
+            'likes' => random_int(1, 10000),
+        ]);
     }
 }

@@ -16,6 +16,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Можно использовать как фиктивные данные через random, так и написанные собственноручно
+        // Команда удаления и повторной отправки всей базы данных, вместе с наполнителями
+        // php artisan migrate:fresh --seed
+
+
+        // Общий вызов каждого из наполнителей через $this->call
         $this->call([
             PostSeeder::class,
             ProductSeeder::class,
