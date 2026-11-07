@@ -7,8 +7,40 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+    public function result(Request $request)
+    {
+        $title = $request->input('title');
+        $slug = $request->input('slug');
+
+        return view('post.form', [
+            'title' => $title, 'slug' => $slug
+        ]);
+    }
+    public function form()
+    {
+        return view('post.form');
+    }
+    // 192. Объект Request в Laravel
+    // теперь укажем объект запроса параметром действия, используя контроль типов
+    // laravel обнаружит, что мы хотим "внедрить" объект запроса в действие и автоматически передаст его в нужный параметр
+    // в результет в действии у нас будет доступна переменная $request.
+    public function indexes(Request $request) {
+
+    }
+
+    // 191. Доп. возможности связей моделей
+    // Проверка наличия связей
+    // Метод has - оставляет только те записи, у которых есть связанные/метод doesntHave - наоборот
+    // $users = User::has('posts')->get();
+
     public function index()
     {
+        $client = Order::find(5)->client;
+        dump($client);
+
+        $orders5 = Order::where('client_id', '>', 5)->get();
+        dump($orders5);
+
         $orders = Order::with(['orderlists', 'client'])->get();
         foreach ($orders as $order) {
             dump($order);
