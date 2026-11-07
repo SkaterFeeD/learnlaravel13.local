@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    // hasMany - обозначает - "имеет много ..." списков заказа
-    // Связь с моделью OrderList M:1
-    public function orderlist() {
+    // hasMany - обозначает "имеет много" (один продукт -> много позиций заказов)
+    // Связь с моделью OrderList 1:M
+    public function orderlists() {
         return $this->hasMany(OrderList::class);
     }
 }

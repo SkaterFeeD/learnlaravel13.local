@@ -12,6 +12,8 @@ Route::get('/migration', [RequestController::class, 'show']);
 
 // 181. Получение данных связь один ко многим
 Route::get('/order/client', [OrderController::class, 'show']);
+// 189. Жадная загрузка множественных отношений
+Route::get('/order/client/index', [OrderController::class, 'index']);
 
 Route::get('/newpost', [PostController::class, 'show']); // Сокращенная запись обращения к контроллеру
 Route::get('/newposts', [PostController::class, 'all']); // Обращение ко второму методу контроллера

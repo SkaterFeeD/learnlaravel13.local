@@ -7,6 +7,19 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+    public function index()
+    {
+        $orders = Order::with(['orderlists', 'client'])->get();
+        foreach ($orders as $order) {
+            dump($order);
+            dump($order->orderlists);
+            dump($order->client);
+        }
+
+        $orders = Order::all();
+        dump($orders);
+    }
+
     // 181. Получение данных связь один ко многим
     public function show()
     {

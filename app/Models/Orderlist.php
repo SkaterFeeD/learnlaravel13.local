@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Orderlist extends Model
 {
-    // belongsTo - обозначает - принадлежит к таблице Order
-    // Связь с моделью Order 1:M
+    // belongsTo - обозначает "принадлежит одному" (много списков заказов -> один заказ)
+    // Связь с моделью Order M:1
     public function order() {
         return $this->belongsTo(Order::class);
     }
-    // belongsTo - обозначает - принадлежит к таблице Product
-    // Связь с моделью Product 1:M
+    // belongsTo - обозначает "принадлежит одному" (много списков заказов -> один продукт)
+    // Связь с моделью Product M:1
     public function product() {
         return $this->belongsTo(Product::class);
     }
